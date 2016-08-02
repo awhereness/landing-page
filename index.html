@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Awhereness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<style type="text/css">
+  @font-face {
+      font-family: 'brandon_text';
+      src: url('fonts/brandontext-regular-webfont.eot');
+      src: url('fonts/brandontext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/brandontext-regular-webfont.woff2') format('woff2'),
+           url('fonts/brandontext-regular-webfont.woff') format('woff'),
+           url('fonts/brandontext-regular-webfont.ttf') format('truetype'),
+           url('fonts/brandontext-regular-webfont.svg#brandon_textregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+    @font-face {
+      font-family: 'brandon_grotesque_regular';
+      src: url('fonts/BrandonGrotesque-Regular.eot');
+      src: url('fonts/BrandonGrotesque-Regular.eot?#iefix') format('embedded-opentype'),
+           url('fonts/BrandonGrotesque-Regular.woff') format('woff'),
+           url('fonts/BrandonGrotesque-Regular.ttf') format('truetype'),
+           url('fonts/BrandonGrotesque-Regular.svg#BrandonGrotesque-Regular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+    @font-face {
+      font-family: 'brandon_grotesque_light';
+      src: url('fonts/BrandonGrotesque-Light.eot');
+      src: url('fonts/BrandonGrotesque-Light.eot?#iefix') format('embedded-opentype'),
+           url('fonts/BrandonGrotesque-Light.woff') format('woff'),
+           url('fonts/BrandonGrotesque-Light.ttf') format('truetype'),
+           url('fonts/BrandonGrotesque-Light.svg#BrandonGrotesque-Light') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+    @font-face {
+      font-family: 'brandon_textlight';
+      src: url('fonts/BrandonText-Light.eot');
+      src: url('fonts/BrandonText-Light.eot?#iefix') format('embedded-opentype'),
+           url('fonts/BrandonText-Light.woff') format('woff'),
+           url('fonts/BrandonText-Light.ttf') format('truetype'),
+           url('fonts/BrandonText-Light.svg#brandon_textbold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+body{
+	background: url("images/background.gif") top right no-repeat;
+	background-size:cover;
+	margin:0;
+	font-family: 'brandon_grotesque_light';
+	font-size:20px;
+	background-attachment:fixed;
+	height:100vh;
+	width:100vw;
+	color:#5E5E5E;
+	overflow-x:hidden;
+}
+h1,h2{
+	font-family: 'brandon_text';
+	font-weight:normal;
+	color:#3F51B5;
+}
+h1{
+	font-size:60px;
+	margin:30px 0 60px 0;
+	max-width:400px;
+}
+p{
+	max-width:400px;
+}
+h2{
+	font-size:25px;
+	margin: 30px 0;
+}
+  aside{
+	  width:400px;
+	  padding:70px 70px 140px 70px;
+	  background-color:rgba(255,255,255,0.90);
+	  
+  }
+  aside > img,#request img,#contact img{
+	  width: 66px;
+  }
+  li{
+	color:#3F51B5;
+  }
+  li span{
+	color:#5E5E5E;
+  }
+  #request,#contact{
+	position:fixed;  
+	top:3000px;
+	left:70px;
+	    overflow-y: scroll;
+  }
+   #request.active,#contact.active{
+	position:fixed;  
+	top:70px;
+	left:70px;
+	bottom: 90px;
+  }
+#request::-webkit-scrollbar, #contact::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#request::-webkit-scrollbar-button, #contact::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+#request::-webkit-scrollbar-thumb, #contact::-webkit-scrollbar-thumb{
+  background: rgba(214, 214, 214, 0.9);
+  border: 0 none #ffffff;
+}
+#request::-webkit-scrollbar-thumb:hover, #contact::-webkit-scrollbar-thumb:hover{
+  background: #848485;
+}
+#request::-webkit-scrollbar-thumb:active, #contact::-webkit-scrollbar-thumb:active{
+  background: #68696a;
+}
+#request::-webkit-scrollbar-track, #contact::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0 none #ffffff;
+  border-radius: 0;
+}
+#request::-webkit-scrollbar-corner, #contact::-webkit-scrollbar-corner {
+  background: transparent;
+}
+  .form-active{
+	overflow:hidden;  
+  }
+  .form-active aside > *:not(div), .form-active #requestButton,.form-active #sharing{
+	visibility:hidden;
+  }
+
+  #find-your-cause{
+	  position:fixed;
+	  right: 20px;
+	  bottom:20px;  
+	  background: url("images/tagline.png") bottom right no-repeat;
+	  background-size:contain;
+	  font-size:0;
+	  width:200px;
+	  height:100px;
+  }
+  aside > div:last-child{
+	  position:fixed;
+	  padding:16px 70px;
+	  background:#fff;
+	  bottom:0px;
+	  left:0px;
+	  background-color:rgba(255,255,255,0.90);
+  }
+  form button{
+	  float: right;
+	  height:65px;
+	  background-color:transparent;
+	  border:0;
+	  color:#C0C0C0;
+	  font-family: 'brandon_text';
+	  text-align:right;
+	  font-size:15px;
+  }
+    form button:hover{
+	  background-color:transparent;
+	  border:0;
+	  color:inherit;
+  }
+  button.action-button:disabled{
+	  background:#EBEBEB;
+	  color:#C0C0C0;
+  }
+  button.action-button:disabled:hover{
+	border:1px solid transparent;
+	background:#EBEBEB;
+	  color:#C0C0C0;
+  }
+  button.action-button{
+	  width:400px;
+	  height:65px;
+	  background-color:#3F51B5;
+	  border:1px solid transparent;
+	  color: #fff;
+	  text-transform:uppercase;
+	  font-family: 'brandon_text';
+	  font-size:18px;
+	  letter-spacing:1px;
+	   -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  #sendContactButton, #sendRequestButton{
+position: fixed;
+    bottom: 16px;
+    left: 70px;
+    z-index: 2;
+    display: none;
+  }
+  #sendContactButton.active, #sendRequestButton.active{
+    z-index: 5;
+    display: block;
+  }
+   button:focus, input, textarea{
+	outline:none;
+  }
+  aside > div:last-child button:hover{
+	  background-color:#fff;
+	  border:1px solid #3F51B5;
+	  color: #3F51B5;
+  }
+  #sharing{
+	margin-bottom:100px;
+  }
+  #sharing a{
+	font-size:0;
+	display: inline-block;
+	text-decoration:none;  
+	width:20px;
+	height:20px;
+	margin-right:18px;
+  }
+  #sharing a:nth-child(1){
+	background: url("images/facebook.svg") center no-repeat;
+  }
+  #sharing a:nth-child(1):hover{
+	background: url("images/facebook-hover.svg") center no-repeat;
+  }
+  #sharing a:nth-child(2){
+	background: url("images/twitter.svg") center no-repeat;
+  }
+  #sharing a:nth-child(2):hover{
+	background: url("images/twitter-hover.svg") center no-repeat;
+  }
+  #sharing a:nth-child(3){
+	background: url("images/mail.svg") center no-repeat;
+  }
+  #sharing a:nth-child(3):hover{
+	background: url("images/mail-hover.svg") center no-repeat;
+  }
+  #copy-contact{
+	font-size:13px;
+  }
+  #copy-contact button{
+	font-size:13px;
+	display:block;
+	background:transparent;
+	border:0;
+	padding:10px 10px 10px 0;
+	font-family: 'brandon_grotesque_regular';
+	cursor:pointer; 
+  }
+  input, textarea{
+	  display:block;  
+	  width: 375px;
+	  height:63px;
+	  padding: 0 10px;
+	  font-family:inherit;
+	  font-size:18px;
+	  margin-bottom:16px;
+	  border: 1px solid #5E5E5E;
+  }
+  input:focus, textarea:focus{
+	  border:1px solid #000;
+  }
+  textarea{
+	height: 180px;
+	padding-top: 10px;
+  }
+  
+  @media (max-width: 775px) {
+    #find-your-cause {
+		display:none;
+    }
+	aside{
+	
+	}
+  }	
+
+</style>
+</head>
+
+<body>
+<aside>
+    <img src="images/logo.png" alt="">
+	<h1>Nonprofit Organizations Wanted</h1>
+    <p>Awhereness is currently developing a sociopolitical networking site designed exclusively for donors, volunteers, voters, activists and nonprofit organizations.</p>
+    <p>When our beta site launches we’d like your nonprofit to be among the first to:</p>
+    <ul>
+    	<li><span>Sign up for your free account.</span></li>
+    	<li><span>Complete your profile.</span></li>
+    	<li><span>Start posting your charitable or political events on our site.</span></li>
+    </ul>
+    <h2>Awhereness Advantages</h2>
+    <p>On our site your content won’t be overshadowed by unrelated Facebook posts and tweets. Users on our site will be looking for ways to give back and get involved. As a result, your nonprofit will be able to:</p>
+    <ul>
+        <li><span>Reach more donors.</span></li>
+        <li><span>Recruit more volunteers.</span></li>
+        <li><span>Help more people.</span></li>
+    </ul>
+    <h2>Request Notification</h2>
+    <p>Request to be notified by email when our beta site launches. After we receive your request, we will send you an email to:</p>
+    <ul>
+    	<li><span>Confirm we received your request.</span></li>
+    	<li><span>Thank you for your interest in our launch.</span></li>
+    	<li><span>Tell you more about us.</span></li>
+    </ul>
+    <h2>Raise Awhereness</h2>
+    <p>Please share our page with your colleagues, friends and followers!</p>
+    <div id="sharing">
+    <a href="#">Share Awhereness on Facebook</a>
+    <a href="#">Share Awhereness on Twitter</a>
+    <a href="#">Email this page</a>
+    </div>
+    <p id="copy-contact">Copyright © 2016 Awhereness Inc. All rights reserved.
+	<button type="button" id="contactButton">Contact Us</button></p>
+    <div id="find-your-cause">
+    Find Your Cause at Awhereness.co
+    </div>
+    <div id="request">
+    <img src="images/logo.png" alt="Awhereness logo">
+    	<h1>Request Notification</h1>
+        <p>Complete the fields below to request that your nonprofit is notified by email when our beta site launches.</p>
+        <form action="">
+        <input type="text" placeholder="First Name" name="firstname" required>
+        <input type="text" placeholder="Last Name" name="lastname" required>
+        <input type="text" placeholder="Nonprofit's Name" name="nonprofit" required>
+        <input type="email" placeholder="Email" name="nonprofit" required>
+        <button type="button" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+    <div id="contact">
+        <img src="images/logo.png" alt="Awhereness logo">
+            <h1>Contact Us</h1>
+            <p>Complete the fields below to submit your inquiry to us. Please forgive slower than expected response times. We will respond to all inquiries as soon as we can.</p>
+            <form action="">
+            <input type="text" placeholder="First Name" name="firstname" required>
+            <input type="text" placeholder="Last Name" name="lastname" required>
+            <input type="text" placeholder="Nonprofit's Name" name="nonprofit" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="Inquiry" name="inquiry" required></textarea>
+            <button type="button" onclick="closeForm()">Cancel</button>
+            </form>
+    </div>
+    <div>
+    <button id="requestButton" type="button" class="action-button">Request Notification</button>
+    <button id="sendRequestButton" type="submit" class="action-button" disabled>Send Request</button>
+    <button id="sendContactButton" type="submit" class="action-button" disabled>Submit</button>
+    </div>
+</aside>
+<script>
+    
+ var contactFormInputs = document.querySelector('#contact form').elements;
+  for (var el, i = 0; el = contactFormInputs[i], i < contactFormInputs.length; i++) {
+  contactFormInputs[i].addEventListener("keyup", checkInputs);
+}
+ var requestFormInputs = document.querySelector('#request form').elements;
+  for (var el, i = 0; el = requestFormInputs[i], i < requestFormInputs.length; i++) {
+  requestFormInputs[i].addEventListener("keyup", checkInputs);
+}
+
+
+document.getElementById("requestButton").addEventListener("click", function(){
+    document.querySelector("#request").classList.toggle("active");
+	document.querySelector("#sendRequestButton").classList.toggle("active");
+	toggleFormActive();
+});
+document.getElementById("contactButton").addEventListener("click", function(){
+    document.querySelector("#contact").classList.toggle("active");
+	document.querySelector("#sendContactButton").classList.toggle("active");
+	toggleFormActive();
+});
+function closeForm(){
+	document.querySelector(".active").classList.remove("active");
+	document.querySelector("button.active").classList.remove("active");
+	toggleFormActive();
+}
+function toggleFormActive(){
+	document.querySelector("body").classList.toggle("form-active");
+	window.scrollTo(0, 0);
+}
+
+
+
+
+function checkInputs(){
+  var formInputs = document.querySelector('.active form').elements;
+  console.log(formInputs);
+
+        var invalid = false;
+        for (var el, i = 0; el = formInputs[i], i < formInputs.length; i++) {
+
+            if(formInputs[i].checkValidity() != true){
+              invalid = true;
+              break;
+            }
+        }
+        if(invalid == false){
+        document.querySelector(".active.action-button").disabled = false;
+        }	
+		
+}
+</script>
+</body>
+</html>
