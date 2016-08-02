@@ -150,7 +150,7 @@ h2{
   .form-active{
 	overflow:hidden;  
   }
-  .form-active aside > *:not(div), .form-active #requestButton,.form-active #sharing{
+  .form-active aside > *:not(div), .form-active #requestButton,.form-active > .sharing{
 	visibility:hidden;
   }
 
@@ -172,7 +172,7 @@ h2{
 	  left:0px;
 	  background-color:rgba(255,255,255,0.90);
   }
-  form button{
+  #contact button, #request button{
 	  float: right;
 	  height:65px;
 	  background-color:transparent;
@@ -182,7 +182,7 @@ h2{
 	  text-align:right;
 	  font-size:15px;
   }
-    form button:hover{
+    #contact form button:hover, #request form button:hover{
 	  background-color:transparent;
 	  border:0;
 	  color:inherit;
@@ -202,7 +202,7 @@ h2{
 	  background-color:#3F51B5;
 	  border:1px solid transparent;
 	  color: #fff;
-	  text-transform:uppercase;
+	  text-transform: uppercase;
 	  font-family: 'brandon_text';
 	  font-size:18px;
 	  letter-spacing:1px;
@@ -228,10 +228,10 @@ position: fixed;
 	  border:1px solid #3F51B5;
 	  color: #3F51B5;
   }
-  #sharing{
+  .sharing{
 	margin-bottom:100px;
   }
-  #sharing a{
+  .sharing a{
 	font-size:0;
 	display: inline-block;
 	text-decoration:none;  
@@ -239,22 +239,22 @@ position: fixed;
 	height:20px;
 	margin-right:18px;
   }
-  #sharing a:nth-child(1){
+  .sharing a:nth-child(1){
 	background: url("images/facebook.svg") center no-repeat;
   }
-  #sharing a:nth-child(1):hover{
+  .sharing a:nth-child(1):hover{
 	background: url("images/facebook-hover.svg") center no-repeat;
   }
-  #sharing a:nth-child(2){
+  .sharing a:nth-child(2){
 	background: url("images/twitter.svg") center no-repeat;
   }
-  #sharing a:nth-child(2):hover{
+  .sharing a:nth-child(2):hover{
 	background: url("images/twitter-hover.svg") center no-repeat;
   }
-  #sharing a:nth-child(3){
+  .sharing a:nth-child(3){
 	background: url("images/mail.svg") center no-repeat;
   }
-  #sharing a:nth-child(3):hover{
+  .sharing a:nth-child(3):hover{
 	background: url("images/mail-hover.svg") center no-repeat;
   }
   #copy-contact{
@@ -362,7 +362,7 @@ position: fixed;
     </ul>
     <h2>Raise Awhereness</h2>
     <p>Please share our page with your colleagues, friends and followers!</p>
-    <div id="sharing">
+    <div class="sharing">
     <a href="#">Share Awhereness on Facebook</a>
     <a href="#">Share Awhereness on Twitter</a>
     <a href="#">Email this page</a>
@@ -376,11 +376,11 @@ position: fixed;
     <img src="images/logo.png" alt="Awhereness logo">
     	<h1>Request Notification</h1>
         <p>Complete the fields below to request that your nonprofit is notified by email when our beta site launches.</p>
-        <form action="">
+        <form>
         <input type="text" placeholder="First Name" name="firstname" required>
         <input type="text" placeholder="Last Name" name="lastname" required>
         <input type="text" placeholder="Nonprofit's Name" name="nonprofit" required>
-        <input type="email" placeholder="Email" name="nonprofit" required>
+        <input type="email" placeholder="Email" name="email" required>
         <button type="button" onclick="closeForm()">Cancel</button>
         </form>
     </div>
@@ -388,7 +388,7 @@ position: fixed;
         <img src="images/logo.png" alt="Awhereness logo">
             <h1>Contact Us</h1>
             <p>Complete the fields below to submit your inquiry to us. Please forgive slower than expected response times. We will respond to all inquiries as soon as we can.</p>
-            <form action="">
+            <form>
             <input type="text" placeholder="First Name" name="firstname" required>
             <input type="text" placeholder="Last Name" name="lastname" required>
             <input type="text" placeholder="Nonprofit's Name" name="nonprofit" required>
@@ -437,10 +437,8 @@ function toggleFormActive(){
 
 
 
-
 function checkInputs(){
   var formInputs = document.querySelector('.active form').elements;
-  console.log(formInputs);
 
         var invalid = false;
         for (var el, i = 0; el = formInputs[i], i < formInputs.length; i++) {
@@ -454,6 +452,48 @@ function checkInputs(){
         document.querySelector(".active.action-button").disabled = false;
         }	
 		
+}
+
+
+document.querySelector("#sendRequestButton").addEventListener("click", sendInfo);
+document.querySelector("#sendContactButton").addEventListener("click", sendContact);
+
+function sendInfo() {
+var button = document.querySelector(".active.action-button");
+button.disabled = true;
+button.textContent = "Submitting your request...";
+var formData = document.querySelector('.active form');
+ var scriptEl = document.createElement('script');
+scriptEl.setAttribute("src","https://script.google.com/macros/s/AKfycbxLUNAzESskmELnw50FR73oI9_NXhgpcO3hM83fjbU04MtqiJnh/exec?firstname="+formData.elements["firstname"].value+"&lastname="+formData.elements["lastname"].value+"&nonprofit="+formData.elements["nonprofit"].value+"&email="+formData.elements["email"].value);
+document.body.appendChild(scriptEl);
+	
+	submissionResponse = function(data){
+document.querySelector(".active.action-button").textContent = "Request Sent";
+var content = document.querySelector("div.active");
+	content.innerHTML = "<img src='images/logo.png' alt='Awhereness logo'><h1>Thank You</h1><div id='response'><p>Thank you for your request to be notified when our beta site launches. You should receive a confirmation email shortly. If not, be sure to check your spam folder before submitting a new request.</p><p>Lastly, please share our page with your colleagues, friends and followers!</p><div class='sharing'><a href='#'>Share Awhereness on Facebook</a><a href='#'>Share Awhereness on Twitter</a><a href='#'>Email this page</a></div></div><button type='button' onclick='closeForm()'>Close</button>";
+		console.log(data.status);
+	}
+	
+	return false;
+}
+
+function sendContact() {
+var button = document.querySelector(".active.action-button");
+button.disabled = true;
+button.textContent = "Submitting your inquiry...";
+var formData = document.querySelector('.active form');
+ var scriptEl = document.createElement('script');
+scriptEl.setAttribute("src","https://script.google.com/macros/s/AKfycbwg-1hAT4P_Euv2Q7tf46RhUzEmaDF_wImWACFevWLYlzkwhq0/exec?firstname="+formData.elements["firstname"].value+"&lastname="+formData.elements["lastname"].value+"&nonprofit="+formData.elements["nonprofit"].value+"&email="+formData.elements["email"].value+"&inquiry="+formData.elements["inquiry"].value);
+document.body.appendChild(scriptEl);
+	
+	submissionResponse = function(data){
+document.querySelector(".active.action-button").textContent = "Inquiry Submitted";
+var content = document.querySelector("div.active");
+	content.innerHTML = "<img src='images/logo.png' alt='Awhereness logo'><h1>Thank You</h1><div id='response'><p>Thank you for your interest in Awhereness. We'll be responding to your submission as soon as possible.</p></div><button type='button' onclick='closeForm()'>Close</button>";
+		console.log(data.status);
+	}
+	
+	return false;
 }
 </script>
 </body>
