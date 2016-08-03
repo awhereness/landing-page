@@ -24,6 +24,9 @@ p{
 #name{
 	font-size:20px;
 }
+.top-bottom-images{
+	text-align:center;
+}
 #footer{
 	text-align:right;
 	font-size:12px;
@@ -32,7 +35,7 @@ p{
 #footer p{
 	margin:16px 80px 16px 0;
 }
-#footer a{
+a{
 	text-decoration:none;
 	color:inherit;
 }
@@ -44,6 +47,15 @@ p{
 	margin:0 80px 20px 0;
 	line-height:18px;
 }
+#causes{
+	vertical-align:middle;
+}
+.cause-icon{
+	text-align:center;	
+}
+.cause-name{
+	color:#000;	
+}
 </style>
 
 </head>
@@ -52,80 +64,80 @@ p{
 <table width="900" border="0" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <td colspan="3"><img src="https://awhereness.github.io/landing-page/images/email/top.png" width="100%" alt=""/></td>
+      <td class="top-bottom-images" colspan="3"><img src="https://awhereness.github.io/landing-page/images/email/top.png" width="100%" alt=""/></td>
     </tr>
     <tr>
-      <td width="50" rowspan="2"><img src="https://awhereness.github.io/landing-page/images/email/left.png" width="100%" height="100%" alt=""/></td>
-      <td id="logo-container" width="800"><img src="https://awhereness.github.io/landing-page/images/email/email-logo.png" width="215" height="136" alt=""/></td>
-      <td width="50" rowspan="2"><img src="https://awhereness.github.io/landing-page/images/email/right.png" width="100%" height="100%" alt=""/></td>
+      <td width="48" rowspan="2"><img src="https://awhereness.github.io/landing-page/images/email/left.png" width="100%" height="100%" alt=""/></td>
+      <td id="logo-container" width="804"><img src="https://awhereness.github.io/landing-page/images/email/email-logo.png" width="194" height="121" alt=""/></td>
+      <td width="48" rowspan="2"><img src="https://awhereness.github.io/landing-page/images/email/right.png" width="100%" height="100%" alt=""/></td>
     </tr>
     <tr>
       <td id="letter-body">
       <p id="name">[ name ],</p>
-      <p>Thank you again for your nonprofit’s interest in the upcoming launch of our new sociopolitical networking site, Awhereness!</p>
+      <p>Thank you again for your nonprofit&#39;s interest in the upcoming launch of our new sociopolitical networking site, Awhereness!</p>
       <p>Awhereness is being created to connect nonprofits like yours directly with folks that are passionate about getting involved and giving back to their communities.</p>
-      <p>Causes will be the cornerstone of our platform. Donors, volunteers, voters and political activists will find your nonprofit based on its cause. The first nine causes we’re bringing awareness to when our beta site launches are:</p>
-      <table width="100%" border="0">
+      <p>Causes will be the cornerstone of our platform. Donors, volunteers, voters and political activists will find your nonprofit based on its cause. The first nine causes we&#39;re bringing awareness to when our beta site launches are:</p>
+      <table width="100%" border="0" id="causes">
   <tbody>
     <tr>
-      <td width="5%"><img src="https://awhereness.github.io/landing-page/images/email/aid.png" width="17" height="20" alt=""/></td>
-      <td width="15%">Aid</td>
-      <td width="80%">Providing relief to those affected by natural disasters.</td>
+      <td class="cause-icon" width="35"><img src="https://awhereness.github.io/landing-page/images/email/aid.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name" width="115">Aid</td>
+      <td class="cause-descr" width="600">Providing relief to those affected by natural disasters.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/care.png" width="17" height="20" alt=""/></td>
-      <td>Care</td>
-      <td>Expanding access to affordable healthcare.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/care.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Care</td>
+      <td class="cause-descr">Expanding access to affordable healthcare.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/energy.png" width="17" height="20" alt=""/></td>
-      <td>Energy</td>
-      <td>Expanding access to electricity.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/energy.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Energy</td>
+      <td class="cause-descr">Expanding access to electricity.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/food.png" width="17" height="20" alt=""/></td>
-      <td>Food</td>
-      <td>Providing food to those suffering from hunger and malnutrition.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/food.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Food</td>
+      <td class="cause-descr">Providing food to those suffering from hunger and malnutrition.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/liberty.png" width="17" height="20" alt=""/></td>
-      <td>Liberty</td>
-      <td>Using online voting to influence legislation that solves social issues.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/liberty.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Liberty</td>
+      <td class="cause-descr">Using online voting to influence legislation that solves social issues.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/peace.png" width="17" height="20" alt=""/></td>
-      <td>Peace</td>
-      <td>Promoting peace and diplomacy around the world.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/peace.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Peace</td>
+      <td class="cause-descr">Promoting peace and diplomacy around the world.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/prosperity.png" width="17" height="20" alt=""/></td>
-      <td>Prosperity</td>
-      <td>Supporting pathways to prosperity for those living in extreme poverty.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/prosperity.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Prosperity</td>
+      <td class="cause-descr">Supporting pathways to prosperity for those living in extreme poverty.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/shelter.png" width="17" height="20" alt=""/></td>
-      <td>Shelter</td>
-      <td>Providing housing for the homeless.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/shelter.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Shelter</td>
+      <td class="cause-descr">Providing housing for the homeless.</td>
     </tr>
     <tr>
-      <td><img src="https://awhereness.github.io/landing-page/images/email/water.png" width="17" height="20" alt=""/></td>
-      <td>Water</td>
-      <td>Expanding access to clean water and sanitation.</td>
+      <td class="cause-icon"><img src="https://awhereness.github.io/landing-page/images/email/water.png" width="17" height="20" alt=""/></td>
+      <td class="cause-name">Water</td>
+      <td class="cause-descr">Expanding access to clean water and sanitation.</td>
     </tr>
   </tbody>
 </table>
-      <p>Don’t see your nonprofit’s cause on the list? Send us an email with your cause for consideration. <strong>Please, be sure to include a one to two sentence description about your cause.</strong></p>
+      <p>Don&#39;t see your nonprofit&#39;s cause on the list? Send us an email with your cause for consideration. <strong>Please, be sure to include a one to two sentence description about your cause.</strong></p>
       <p>Expect to receive an email this fall when our beta site launches. At that time, your nonprofit can  sign up for a free account, create a profile and start posting you charitable or political events on our site.</p>
       <p>Sincerely,</p>
-      <p>Kim Hawk <br>Marketing Manger <br>Awhereness, Inc. <br>kim.h@awhereness.co</p>
+      <p>Kim Hawk <br>Marketing Manger <br>Awhereness, Inc. <br>kim.h@awhereness.co <br><a href="https://www.awhereness.co">awhereness.co</a></p>
       <p>P.S. Excited about the launch of Awhereness? Feel free to forward this email to your colleagues and friends!</p>
       </td>
     </tr>
     <tr>
-      <td colspan="3"><img src="https://awhereness.github.io/landing-page/images/email/bottom.png" width="100%" alt=""/></td>
+      <td colspan="3" class="top-bottom-images"><img src="https://awhereness.github.io/landing-page/images/email/bottom.png" width="100%" alt=""/></td>
     </tr>
     <tr id="footer">
-      <td colspan="3">
+      <td colspan="3" valign="top">
       <p id="footer-info">Copyright © 2016 Awhereness Inc. <br>3390 Stratford Rd NE, Unit 2509, Atlanta, GA 30326 <br>All rights reserved.</p>
       <p><a href="">Terms</a></p>
       <p><a href="">Privacy</a></p>
